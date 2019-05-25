@@ -8,6 +8,7 @@ dependencies {
     compile project(':uPortal-concurrency')
     compile project(':uPortal-hibernate:uPortal-hibernate4-dialects')
 
+    compile "javax.xml.bind:jaxb-api:${jaxbApiVersion}"
     compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
     compile "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
     compile "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
@@ -15,7 +16,7 @@ dependencies {
     compile "net.sf.ehcache:ehcache-core:${ehcacheVersion}"
     compile "org.apache.ant:ant:${antVersion}"
     compile "org.apache.commons:commons-lang3:${commonsLang3Version}"
-    compile "org.aspectj:aspectjrt:${aspectjVersion}"
+    compile "org.aspectj:aspectjweaver:${aspectjVersion}"
     compile "com.fasterxml.woodstox:woodstox-core:${woodstoxVersion}"
     compile "org.jasig.resourceserver:resource-server-api:${resourceServerVersion}"
     compile "org.jasig.resourceserver:resource-server-utils:${resourceServerVersion}"

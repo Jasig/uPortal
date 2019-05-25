@@ -9,10 +9,12 @@ ext {
 }
 
 dependencies {
-    // All 6 of the following are for the 'com.github.jacobono.jaxb' plugin
+    compile "javax.xml.bind:jaxb-api:${jaxbApiVersion}"
+
+    // All 6 of the following are for the 'org.openrepose.gradle.plugins.jaxb' plugin
     jaxb 'com.sun.xml.bind:jaxb-xjc:2.2.7-b41'
     jaxb 'com.sun.xml.bind:jaxb-impl:2.2.7-b41'
-    jaxb 'javax.xml.bind:jaxb-api:2.3.1'
+    jaxb "javax.xml.bind:jaxb-api:${jaxbApiVersion}"
     jaxb 'org.jvnet.jaxb2_commons:jaxb2-basics-ant:1.11.1'
     jaxb 'org.jvnet.jaxb2_commons:jaxb2-basics:1.11.1'
     jaxb 'org.jvnet.jaxb2_commons:jaxb2-basics-annotate:1.1.0'

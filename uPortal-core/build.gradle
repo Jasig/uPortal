@@ -5,6 +5,7 @@ dependencies {
         exclude group: 'com.google.guava', module: 'guava'
     }
     compile "commons-lang:commons-lang:${commonsLangVersion}"
+    compile "javax.annotation:javax.annotation-api:${javaxAnnotationVersion}"
     compile "joda-time:joda-time:${jodaTimeVersion}"
     compile "org.apache.commons:commons-lang3:${commonsLang3Version}"
     compile "org.hibernate:hibernate-core:${hibernateVersion}"
