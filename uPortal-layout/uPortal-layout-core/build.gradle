@@ -5,23 +5,23 @@ ext {
 }
 
 dependencies {
-    compile project(':uPortal-io:uPortal-io-core')
-    compile project(':uPortal-i18n')
-    compile project(':uPortal-utils:uPortal-utils-core')
+    implementation project(':uPortal-io:uPortal-io-core')
+    implementation project(':uPortal-i18n')
+    implementation project(':uPortal-utils:uPortal-utils-core')
 
-    compile "com.google.guava:guava:${guavaVersion}"
-    compile("dom4j:dom4j:${dom4jVersion}"){
+    implementation "com.google.guava:guava:${guavaVersion}"
+    implementation("dom4j:dom4j:${dom4jVersion}"){
         exclude group: 'xml-apis', module: 'xml-apis'
     }
 
-    testCompile "${portletApiDependency}"
-    testCompile "${servletApiDependency}"
+    testImplementation "${portletApiDependency}"
+    testImplementation "${servletApiDependency}"
 
     compileOnly "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
     annotationProcessor "org.hibernate:hibernate-jpamodelgen:${hibernateJpamodelgenVersion}"
     compileOnly "${servletApiDependency}"
 
-    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"}
 

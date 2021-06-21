@@ -1,7 +1,7 @@
 description = "Apereo uPortal Groups Grouper"
 
 dependencies {
-    compile project(':uPortal-groups:uPortal-groups-core')
+    implementation project(':uPortal-groups:uPortal-groups-core')
 
-    compile "edu.internet2.middleware.grouper:grouperClient:${grouperClientVersion}"
+    implementation "edu.internet2.middleware.grouper:grouperClient:${grouperClientVersion}"
 }

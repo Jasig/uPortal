@@ -5,10 +5,10 @@ ext {
 }
 
 dependencies {
-    compile project(':uPortal-api:uPortal-api-internal')
-    compile project(':uPortal-io:uPortal-io-types')
+    implementation project(':uPortal-api:uPortal-api-internal')
+    implementation project(':uPortal-io:uPortal-io-types')
 
-    compile "javax.mail:mail:${javaxMailVersion}"
+    implementation "javax.mail:mail:${javaxMailVersion}"
 
     annotationProcessor "org.hibernate:hibernate-jpamodelgen:${hibernateJpamodelgenVersion}" // Required for javac -s
     compileOnly "${servletApiDependency}"

@@ -1,18 +1,18 @@
 description = "Apereo uPortal Security Core"
 
 dependencies {
-    compile project(':uPortal-content:uPortal-content-portlet')
-    compile project(':uPortal-groups:uPortal-groups-core')
-    compile project(':uPortal-i18n')
-    compile project(':uPortal-soffit:uPortal-soffit-core')
+    implementation project(':uPortal-content:uPortal-content-portlet')
+    implementation project(':uPortal-groups:uPortal-groups-core')
+    implementation project(':uPortal-i18n')
+    implementation project(':uPortal-soffit:uPortal-soffit-core')
 
-    compile "io.jsonwebtoken:jjwt-api:${jjwtVersion}"
-    runtime "io.jsonwebtoken:jjwt-impl:${jjwtVersion}",
+    implementation "io.jsonwebtoken:jjwt-api:${jjwtVersion}"
+    runtimeOnly "io.jsonwebtoken:jjwt-impl:${jjwtVersion}",
             "org.bouncycastle:bcprov-jdk15on:${bouncyVersion}",  // for RSASSA-PSS
             "io.jsonwebtoken:jjwt-jackson:${jjwtVersion}"
-    compile "org.jasypt:jasypt:${jasyptVersion}"
+    implementation "org.jasypt:jasypt:${jasyptVersion}"
 
-    testCompile "${servletApiDependency}"
+    testImplementation "${servletApiDependency}"
 
     compileOnly "${portletApiDependency}"
     compileOnly "${servletApiDependency}"

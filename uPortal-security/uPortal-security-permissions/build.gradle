@@ -5,11 +5,11 @@ ext {
 }
 
 dependencies {
-    compile project(':uPortal-api:uPortal-api-internal')
-    compile project(':uPortal-content:uPortal-content-publishing')
-    compile project(':uPortal-io:uPortal-io-jaxb')
-    compile project(':uPortal-security:uPortal-security-core')
-    compile project(':uPortal-spring')
+    implementation project(':uPortal-api:uPortal-api-internal')
+    implementation project(':uPortal-content:uPortal-content-publishing')
+    implementation project(':uPortal-io:uPortal-io-jaxb')
+    implementation project(':uPortal-security:uPortal-security-core')
+    implementation project(':uPortal-spring')
 
     annotationProcessor "org.hibernate:hibernate-jpamodelgen:${hibernateJpamodelgenVersion}"
 }

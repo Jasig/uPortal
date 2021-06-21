@@ -1,28 +1,28 @@
 description = "Apereo uPortal REST APIs"
 
 dependencies {
-    compile project(':uPortal-groups:uPortal-groups-pags')
-    compile project(':uPortal-index')
-    compile project(':uPortal-layout:uPortal-layout-impl')
-    compile project(':uPortal-security:uPortal-security-permissions')
+    implementation project(':uPortal-groups:uPortal-groups-pags')
+    implementation project(':uPortal-index')
+    implementation project(':uPortal-layout:uPortal-layout-impl')
+    implementation project(':uPortal-security:uPortal-security-permissions')
     compileOnly "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
 
-    compile "commons-beanutils:commons-beanutils:${commonsBeanutilsVersion}"
-    compile "io.springfox:springfox-swagger2:${springfoxSwaggerVersion}"
-    compile "io.springfox:springfox-swagger-ui:${springfoxSwaggerVersion}"
-    compile "org.apache.lucene:lucene-queryparser:${luceneVersion}"
-    compile "org.json:json:${orgJsonVersion}"
-    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "commons-beanutils:commons-beanutils:${commonsBeanutilsVersion}"
+    implementation "io.springfox:springfox-swagger2:${springfoxSwaggerVersion}"
+    implementation "io.springfox:springfox-swagger-ui:${springfoxSwaggerVersion}"
+    implementation "org.apache.lucene:lucene-queryparser:${luceneVersion}"
+    implementation "org.json:json:${orgJsonVersion}"
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 
     compileOnly "${portletApiDependency}"
     compileOnly "${servletApiDependency}"
 
-    testCompile "${servletApiDependency}"
-    testCompile "${portletApiDependency}"
+    testImplementation "${servletApiDependency}"
+    testImplementation "${portletApiDependency}"
     //need to add for SessionRESTControllerTest.java
-    testCompile "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
-    testCompile "org.mockito:mockito-inline:${mockitoVersion}"
-    testCompile project(':uPortal-security:uPortal-security-permissions')
+    testImplementation "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
+    testImplementation "org.mockito:mockito-inline:${mockitoVersion}"
+    testImplementation project(':uPortal-security:uPortal-security-permissions')
 }

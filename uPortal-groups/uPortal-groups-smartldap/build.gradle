@@ -1,9 +1,9 @@
 description = "Apereo uPortal Groups SmartLdap"
 
 dependencies {
-    compile project(':uPortal-groups:uPortal-groups-core')
+    implementation project(':uPortal-groups:uPortal-groups-core')
 
-    compile("com.googlecode.cernunnos:cernunnos:${cernunnosVersion}") {
+    implementation("com.googlecode.cernunnos:cernunnos:${cernunnosVersion}") {
         exclude group: 'org.netbeans.lib', module: 'cvsclient'
         exclude group: 'org.springframework', module: 'spring'
         exclude group: 'net.sf.retrotranslator', module: 'retrotranslator-runtime'
@@ -17,5 +17,5 @@ dependencies {
         exclude group: 'javax.script', module: 'groovy-engine'
         exclude group: 'javax.script', module: 'script-api'
     }
-    compile "org.springframework.ldap:spring-ldap-core:${springLdapVersion}"
+    implementation "org.springframework.ldap:spring-ldap-core:${springLdapVersion}"
 }

@@ -1,11 +1,11 @@
 description = "Apereo uPortal Security Authentication"
 
 dependencies {
-    compile project(':uPortal-persondir')
-    compile project(':uPortal-security:uPortal-security-core')
-    compile project(':uPortal-spring')
+    implementation project(':uPortal-persondir')
+    implementation project(':uPortal-security:uPortal-security-core')
+    implementation project(':uPortal-spring')
 
-    compile("org.jasig.cas.client:cas-client-core:${casClientVersion}") {
+    implementation("org.jasig.cas.client:cas-client-core:${casClientVersion}") {
         exclude group: 'org.opensaml', module: 'opensaml'
     }
 

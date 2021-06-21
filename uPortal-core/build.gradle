@@ -1,24 +1,24 @@
 description = "Apereo uPortal Core"
 
 dependencies {
-    compile("com.googlecode.ehcache-spring-annotations:ehcache-spring-annotations:${ehcacheSpringAnnotationsVersion}") {
+    implementation("com.googlecode.ehcache-spring-annotations:ehcache-spring-annotations:${ehcacheSpringAnnotationsVersion}") {
         exclude group: 'com.google.guava', module: 'guava'
     }
-    compile "commons-lang:commons-lang:${commonsLangVersion}"
-    compile "joda-time:joda-time:${jodaTimeVersion}"
-    compile "org.apache.commons:commons-lang3:${commonsLang3Version}"
-    compile "org.hibernate:hibernate-core:${hibernateVersion}"
-    compile("org.jadira.usertype:usertype.core:${usertypeVersion}") {
+    implementation "commons-lang:commons-lang:${commonsLangVersion}"
+    implementation "joda-time:joda-time:${jodaTimeVersion}"
+    implementation "org.apache.commons:commons-lang3:${commonsLang3Version}"
+    implementation "org.hibernate:hibernate-core:${hibernateVersion}"
+    implementation("org.jadira.usertype:usertype.core:${usertypeVersion}") {
         exclude group: 'org.hibernate', module: 'hibernate-core'
         exclude group: 'org.hibernate', module: 'hibernate-entitymanager'
     }
-    compile "org.jadira.usertype:usertype.spi:${usertypeVersion}"
-    compile "org.slf4j:log4j-over-slf4j:${slf4jVersion}"
-    compile "org.slf4j:jcl-over-slf4j:${slf4jVersion}"
-    compile "org.slf4j:slf4j-api:${slf4jVersion}"
-    compile "org.springframework:spring-context:${springVersion}"
-    compile "org.springframework:spring-jdbc:${springVersion}"
-    compile "org.springframework.security:spring-security-core:${springSecurityVersion}"
+    implementation "org.jadira.usertype:usertype.spi:${usertypeVersion}"
+    implementation "org.slf4j:log4j-over-slf4j:${slf4jVersion}"
+    implementation "org.slf4j:jcl-over-slf4j:${slf4jVersion}"
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "org.springframework:spring-context:${springVersion}"
+    implementation "org.springframework:spring-jdbc:${springVersion}"
+    implementation "org.springframework.security:spring-security-core:${springSecurityVersion}"
 
     compileOnly "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
     compileOnly "${portletApiDependency}"

@@ -1,11 +1,11 @@
 description = "Apereo uPortal Import/Export Core"
 
 dependencies {
-    compile project(':uPortal-utils:uPortal-utils-core')
+    implementation project(':uPortal-utils:uPortal-utils-core')
 
-    compile "commons-lang:commons-lang:${commonsLangVersion}"
-    compile "org.apache.commons:commons-compress:${commonsCompressVersion}"
-    compile "org.apache.tika:tika-core:${tikaVersion}"
-    compile "org.slf4j:slf4j-api:${slf4jVersion}"
-    compile "org.springframework:spring-oxm:${springVersion}"
+    implementation "commons-lang:commons-lang:${commonsLangVersion}"
+    implementation "org.apache.commons:commons-compress:${commonsCompressVersion}"
+    implementation "org.apache.tika:tika-core:${tikaVersion}"
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "org.springframework:spring-oxm:${springVersion}"
 }

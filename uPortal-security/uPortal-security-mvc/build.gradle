@@ -1,16 +1,16 @@
 description = "Apereo uPortal Security MVC"
 
 dependencies {
-    compile project(':uPortal-core')
-    compile project(':uPortal-events')
+    implementation project(':uPortal-core')
+    implementation project(':uPortal-events')
 
-    testCompile "${servletApiDependency}"
+    testImplementation "${servletApiDependency}"
 
     compileOnly "${servletApiDependency}"
     compileOnly "org.springframework:spring-web:${springVersion}"
     compileOnly "org.springframework:spring-test:${springVersion}"
 
-    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 }

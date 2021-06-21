@@ -1,14 +1,14 @@
 description = "Apereo uPortal Import/Export Data Types"
 
 dependencies {
-    compile project(':uPortal-events')
-    compile project(':uPortal-groups:uPortal-groups-pags')
-    compile project(':uPortal-io:uPortal-io-core')
-    compile project(':uPortal-io:uPortal-io-jaxb')
-    compile project(':uPortal-security:uPortal-security-permissions')
+    implementation project(':uPortal-events')
+    implementation project(':uPortal-groups:uPortal-groups-pags')
+    implementation project(':uPortal-io:uPortal-io-core')
+    implementation project(':uPortal-io:uPortal-io-jaxb')
+    implementation project(':uPortal-security:uPortal-security-permissions')
 
-    compile "com.fasterxml.staxmate:staxmate:${staxmateVersion}"
-    compile("com.googlecode.cernunnos:cernunnos:${cernunnosVersion}") {
+    implementation "com.fasterxml.staxmate:staxmate:${staxmateVersion}"
+    implementation("com.googlecode.cernunnos:cernunnos:${cernunnosVersion}") {
         exclude group: 'org.netbeans.lib', module: 'cvsclient'
         exclude group: 'org.springframework', module: 'spring'
         exclude group: 'net.sf.retrotranslator', module: 'retrotranslator-runtime'

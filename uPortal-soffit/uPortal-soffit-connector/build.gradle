@@ -1,15 +1,15 @@
 description = "Apereo uPortal Soffit Connector"
 
 dependencies {
-    compile project(':uPortal-groups:uPortal-groups-core')
-    compile project(':uPortal-i18n')
-    compile project(':uPortal-marketplace')
-    compile project(':uPortal-soffit:uPortal-soffit-core')
+    implementation project(':uPortal-groups:uPortal-groups-core')
+    implementation project(':uPortal-i18n')
+    implementation project(':uPortal-marketplace')
+    implementation project(':uPortal-soffit:uPortal-soffit-core')
 
-    compile "commons-io:commons-io:${commonsIoVersion}"
-    compile "net.sf.ehcache:ehcache-core:${ehcacheVersion}"
-    compile "org.apache.httpcomponents:httpclient:${httpclientVersion}"
-    compile "org.springframework:spring-webmvc-portlet:${springVersion}"
+    implementation "commons-io:commons-io:${commonsIoVersion}"
+    implementation "net.sf.ehcache:ehcache-core:${ehcacheVersion}"
+    implementation "org.apache.httpcomponents:httpclient:${httpclientVersion}"
+    implementation "org.springframework:spring-webmvc-portlet:${springVersion}"
 
     compileOnly "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
     compileOnly "${portletApiDependency}"

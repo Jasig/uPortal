@@ -26,47 +26,47 @@ configurations {
 }
 
 dependencies {
-    compile project(':uPortal-groups:uPortal-groups-filesystem')
-    compile project(':uPortal-groups:uPortal-groups-grouper')
-    compile project(':uPortal-groups:uPortal-groups-ldap')
-    compile project(':uPortal-groups:uPortal-groups-local')
-    compile project(':uPortal-groups:uPortal-groups-smartldap')
-    compile project(':uPortal-index')
-    compile project(':uPortal-portlets')
-    compile project(':uPortal-security:uPortal-security-authn')
-    compile project(':uPortal-security:uPortal-security-xslt')
-    compile project(':uPortal-soffit:uPortal-soffit-connector')
-    compile project(':uPortal-utils:uPortal-utils-jmx')
+    implementation project(':uPortal-groups:uPortal-groups-filesystem')
+    implementation project(':uPortal-groups:uPortal-groups-grouper')
+    implementation project(':uPortal-groups:uPortal-groups-ldap')
+    implementation project(':uPortal-groups:uPortal-groups-local')
+    implementation project(':uPortal-groups:uPortal-groups-smartldap')
+    implementation project(':uPortal-index')
+    implementation project(':uPortal-portlets')
+    implementation project(':uPortal-security:uPortal-security-authn')
+    implementation project(':uPortal-security:uPortal-security-xslt')
+    implementation project(':uPortal-soffit:uPortal-soffit-connector')
+    implementation project(':uPortal-utils:uPortal-utils-jmx')
 
     compileOnly "org.apereo.service.persondir:person-directory-api:${personDirectoryVersion}"
     compileOnly "${servletApiDependency}"
 
-    testCompile "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
-    testCompile "org.apache.portals.pluto:pluto-container-driver-api:${plutoVersion}"
-    testCompile "org.skyscreamer:jsonassert:${jsonassertVersion}"
-    testCompile "org.codehaus.groovy:groovy-test:${groovyVersion}"
-    testCompile "org.spockframework:spock-core:${spockVersion}"
-    testCompile "${portletApiDependency}"
-    testCompile "${servletApiDependency}"
+    testImplementation "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
+    testImplementation "org.apache.portals.pluto:pluto-container-driver-api:${plutoVersion}"
+    testImplementation "org.skyscreamer:jsonassert:${jsonassertVersion}"
+    testImplementation "org.codehaus.groovy:groovy-test:${groovyVersion}"
+    testImplementation "org.spockframework:spock-core:${spockVersion}"
+    testImplementation "${portletApiDependency}"
+    testImplementation "${servletApiDependency}"
 
-    runtime "ch.qos.logback:logback-classic:${logbackVersion}"
-    runtime "joda-time:joda-time-jsptags:${jodaTimeJsptagsVersion}"
-    runtime "org.aspectj:aspectjweaver:${aspectjVersion}"
-    runtime "org.codehaus.groovy:groovy-jsr223:${groovyVersion}"
-    runtime "org.hibernate:hibernate-entitymanager:${hibernateVersion}"
-    runtime "org.jasig.cas.client:cas-client-support-distributed-ehcache:${casClientVersion}"
-    runtime "org.jasig.ehcache:ehcache-jgroups3replication:${ehcacheJgroups3ReplicationVersion}"
-    runtime "org.jasig.portlet.utils:portlet-ws-util:${apereoPortletUtilsVersion}"
-    runtime "org.slf4j:jul-to-slf4j:${slf4jVersion}"
-    runtime "org.slf4j:log4j-over-slf4j:${slf4jVersion}"
-    runtime "org.springframework.security:spring-security-config:${springSecurityVersion}"
-    runtime "com.thoughtworks.xstream:xstream:${xstreamVersion}"
+    runtimeOnly "ch.qos.logback:logback-classic:${logbackVersion}"
+    runtimeOnly "joda-time:joda-time-jsptags:${jodaTimeJsptagsVersion}"
+    runtimeOnly "org.aspectj:aspectjweaver:${aspectjVersion}"
+    runtimeOnly "org.codehaus.groovy:groovy-jsr223:${groovyVersion}"
+    runtimeOnly "org.hibernate:hibernate-entitymanager:${hibernateVersion}"
+    runtimeOnly "org.jasig.cas.client:cas-client-support-distributed-ehcache:${casClientVersion}"
+    runtimeOnly "org.jasig.ehcache:ehcache-jgroups3replication:${ehcacheJgroups3ReplicationVersion}"
+    runtimeOnly "org.jasig.portlet.utils:portlet-ws-util:${apereoPortletUtilsVersion}"
+    runtimeOnly "org.slf4j:jul-to-slf4j:${slf4jVersion}"
+    runtimeOnly "org.slf4j:log4j-over-slf4j:${slf4jVersion}"
+    runtimeOnly "org.springframework.security:spring-security-config:${springSecurityVersion}"
+    runtimeOnly "com.thoughtworks.xstream:xstream:${xstreamVersion}"
 
     /*
      * The HSQL driver jar should always be provided by uPortal-start;
      * that way, it has complete control over the version in the deployment.
      */
-    providedRuntime "org.hsqldb:hsqldb:${hsqldbVersion}"
+    runtimeOnly "org.hsqldb:hsqldb:${hsqldbVersion}"
 
     webjars "org.webjars.npm:bootstrap:${bootstrapVersion}"
     webjars "org.webjars.npm:core-js-bundle:${coreJsBundleVersion}"

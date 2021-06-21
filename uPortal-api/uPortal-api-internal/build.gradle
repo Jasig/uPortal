@@ -1,16 +1,16 @@
 description = "Apereo uPortal Internal API"
 
 dependencies {
-    compile project(':uPortal-io:uPortal-io-jaxb')
-    compile project(':uPortal-layout:uPortal-layout-core')
-    compile project(':uPortal-marketplace')
-    compile project(':uPortal-persondir')
-    compile project(':uPortal-rendering')
-    compile project(':uPortal-security:uPortal-security-services')
+    implementation project(':uPortal-io:uPortal-io-jaxb')
+    implementation project(':uPortal-layout:uPortal-layout-core')
+    implementation project(':uPortal-marketplace')
+    implementation project(':uPortal-persondir')
+    implementation project(':uPortal-rendering')
+    implementation project(':uPortal-security:uPortal-security-services')
 
     compileOnly "${portletApiDependency}"
     compileOnly "${servletApiDependency}"
 
     compileOnly "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
-    testCompile "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
+    testImplementation "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
 }

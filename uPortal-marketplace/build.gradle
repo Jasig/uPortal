@@ -1,14 +1,14 @@
 description = "Apereo uPortal Marketplace"
 
 dependencies {
-    compile project(':uPortal-layout:uPortal-layout-core')
-    compile project(':uPortal-security:uPortal-security-core')
+    implementation project(':uPortal-layout:uPortal-layout-core')
+    implementation project(':uPortal-security:uPortal-security-core')
 
-    testCompile "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
+    testImplementation "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
 
     compileOnly "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
 
-    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 }

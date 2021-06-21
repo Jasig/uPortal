@@ -1,8 +1,8 @@
 description = "Apereo uPortal Hibernate Utilities"
 
 dependencies {
-    compile "commons-lang:commons-lang:${commonsLangVersion}"
-    compile "net.sf.ehcache:ehcache-core:${ehcacheVersion}"
-    compile "org.hibernate:hibernate-core:${hibernateVersion}"
-    compile "org.hibernate:hibernate-ehcache:${hibernateVersion}"
+    implementation "commons-lang:commons-lang:${commonsLangVersion}"
+    implementation "net.sf.ehcache:ehcache-core:${ehcacheVersion}"
+    implementation "org.hibernate:hibernate-core:${hibernateVersion}"
+    implementation "org.hibernate:hibernate-ehcache:${hibernateVersion}"
 }

@@ -1,25 +1,25 @@
 description = "Apereo uPortal Spring Components"
 
 dependencies {
-    compile project(':uPortal-api:uPortal-api-internal')
-    compile project(':uPortal-security:uPortal-security-core')
-    compile project(':uPortal-security:uPortal-security-mvc')
-    compile project(':uPortal-tools')
+    implementation project(':uPortal-api:uPortal-api-internal')
+    implementation project(':uPortal-security:uPortal-security-core')
+    implementation project(':uPortal-security:uPortal-security-mvc')
+    implementation project(':uPortal-tools')
 
-    compile "commons-codec:commons-codec:${commonsCodecVersion}"
-    compile "commons-lang:commons-lang:${commonsLangVersion}"
-    compile "net.oauth.core:oauth:${oauthVersion}"
-    compile "org.jasypt:jasypt:${jasyptVersion}"
-    compile "org.slf4j:slf4j-api:${slf4jVersion}"
-    compile "org.springframework:spring-web:${springVersion}"
-    compile "org.springframework:spring-webmvc:${springVersion}"
-    compile "org.springframework:spring-webmvc-portlet:${springVersion}"
+    implementation "commons-codec:commons-codec:${commonsCodecVersion}"
+    implementation "commons-lang:commons-lang:${commonsLangVersion}"
+    implementation "net.oauth.core:oauth:${oauthVersion}"
+    implementation "org.jasypt:jasypt:${jasyptVersion}"
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "org.springframework:spring-web:${springVersion}"
+    implementation "org.springframework:spring-webmvc:${springVersion}"
+    implementation "org.springframework:spring-webmvc-portlet:${springVersion}"
 
     compileOnly "${portletApiDependency}"
     compileOnly "${servletApiDependency}"
 
-    testCompile "${portletApiDependency}"
-    testCompile "${servletApiDependency}"
+    testImplementation "${portletApiDependency}"
+    testImplementation "${servletApiDependency}"
 
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"}

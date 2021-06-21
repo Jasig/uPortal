@@ -1,15 +1,15 @@
 description = "Apereo uPortal RDBM"
 
 dependencies {
-    compile project(':uPortal-utils:uPortal-utils-core')
+    implementation project(':uPortal-utils:uPortal-utils-core')
 
-    compile "com.google.guava:guava:${guavaVersion}"
-    compile "org.apache.commons:commons-math3:${commonsMath3Version}"
-    compile "org.hibernate:hibernate-core:${hibernateVersion}"
-    compile "org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final"
-    compile "org.jasig.portlet.utils:portlet-jdbc-util:${apereoPortletUtilsVersion}"
-    compile "org.springframework:spring-context:${springVersion}"
-    compile "org.springframework:spring-jdbc:${springVersion}"
-    compile "org.springframework:spring-orm:${springVersion}"
-    compile "org.springframework:spring-tx:${springVersion}"
+    implementation "com.google.guava:guava:${guavaVersion}"
+    implementation "org.apache.commons:commons-math3:${commonsMath3Version}"
+    implementation "org.hibernate:hibernate-core:${hibernateVersion}"
+    implementation "org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final"
+    implementation "org.jasig.portlet.utils:portlet-jdbc-util:${apereoPortletUtilsVersion}"
+    implementation "org.springframework:spring-context:${springVersion}"
+    implementation "org.springframework:spring-jdbc:${springVersion}"
+    implementation "org.springframework:spring-orm:${springVersion}"
+    implementation "org.springframework:spring-tx:${springVersion}"
 }

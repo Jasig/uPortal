@@ -5,40 +5,40 @@ ext {
 }
 
 dependencies {
-    compile project(':uPortal-concurrency')
-    compile project(':uPortal-hibernate:uPortal-hibernate4-dialects')
+    implementation project(':uPortal-concurrency')
+    implementation project(':uPortal-hibernate:uPortal-hibernate4-dialects')
 
-    compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
-    compile "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
-    compile "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
-    compile "com.google.guava:guava:${guavaVersion}"
-    compile "net.sf.ehcache:ehcache-core:${ehcacheVersion}"
-    compile "org.apache.ant:ant:${antVersion}"
-    compile "org.apache.commons:commons-lang3:${commonsLang3Version}"
-    compile "org.aspectj:aspectjrt:${aspectjVersion}"
-    compile "com.fasterxml.woodstox:woodstox-core:${woodstoxVersion}"
-    compile "org.jasig.resourceserver:resource-server-api:${resourceServerVersion}"
-    compile "org.jasig.resourceserver:resource-server-utils:${resourceServerVersion}"
-    compile("org.apereo.service.persondir:person-directory-impl:${personDirectoryVersion}") {
+    implementation "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    implementation "com.google.guava:guava:${guavaVersion}"
+    implementation "net.sf.ehcache:ehcache-core:${ehcacheVersion}"
+    implementation "org.apache.ant:ant:${antVersion}"
+    implementation "org.apache.commons:commons-lang3:${commonsLang3Version}"
+    implementation "org.aspectj:aspectjrt:${aspectjVersion}"
+    implementation "com.fasterxml.woodstox:woodstox-core:${woodstoxVersion}"
+    implementation "org.jasig.resourceserver:resource-server-api:${resourceServerVersion}"
+    implementation "org.jasig.resourceserver:resource-server-utils:${resourceServerVersion}"
+    implementation("org.apereo.service.persondir:person-directory-impl:${personDirectoryVersion}") {
         exclude group: 'com.google.guava', module: 'guava'
         exclude group: 'org.springframework', module: 'spring-beans'
         exclude group: 'org.springframework', module: 'spring-context'
         exclude group: 'org.springframework', module: 'spring-core'
         exclude group: 'org.springframework', module: 'spring-tx'
     }
-    compile "org.jgroups:jgroups:${jgroupsVersion}"
-    compile "org.jvnet.jaxb2_commons:jaxb2-basics-runtime:${jaxb2basicsVersion}"
-    compile "org.slf4j:jcl-over-slf4j:${slf4jVersion}"
-    compile "org.springframework:spring-beans:${springVersion}"
-    compile "org.springframework:spring-context:${springVersion}"
-    compile "org.springframework:spring-orm:${springVersion}"
-    compile "org.springframework:spring-web:${springVersion}"
-    compile "org.springframework:spring-webmvc-portlet:${springVersion}"
-    compile "org.springframework.ldap:spring-ldap-core:${springLdapVersion}"
-    compile "org.springframework.security:spring-security-web:${springSecurityVersion}"
-    compile "org.springframework.webflow:spring-binding:${springWebflowVersion}"
-    compile "org.springframework.webflow:spring-webflow:${springWebflowVersion}"
-    compile("org.springmodules:spring-modules-cache:${springModulesCacheVersion}") {
+    implementation "org.jgroups:jgroups:${jgroupsVersion}"
+    implementation "org.jvnet.jaxb2_commons:jaxb2-basics-runtime:${jaxb2basicsVersion}"
+    implementation "org.slf4j:jcl-over-slf4j:${slf4jVersion}"
+    implementation "org.springframework:spring-beans:${springVersion}"
+    implementation "org.springframework:spring-context:${springVersion}"
+    implementation "org.springframework:spring-orm:${springVersion}"
+    implementation "org.springframework:spring-web:${springVersion}"
+    implementation "org.springframework:spring-webmvc-portlet:${springVersion}"
+    implementation "org.springframework.ldap:spring-ldap-core:${springLdapVersion}"
+    implementation "org.springframework.security:spring-security-web:${springSecurityVersion}"
+    implementation "org.springframework.webflow:spring-binding:${springWebflowVersion}"
+    implementation "org.springframework.webflow:spring-webflow:${springWebflowVersion}"
+    implementation("org.springmodules:spring-modules-cache:${springModulesCacheVersion}") {
         exclude group: 'org.springframework', module: 'spring'
         exclude group: 'gigaspaces', module: 'gigaspaces-ce'
         exclude group: 'jini', module: 'jsk-lib'
@@ -65,13 +65,13 @@ dependencies {
         exclude group: 'opensymphony', module: 'oscache'
         exclude group: 'ehcache', module: 'ehcache'
     }
-    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 
-    testCompile project(':uPortal-events')
-    testCompile "${portletApiDependency}"
-    testCompile "${servletApiDependency}"
+    testImplementation project(':uPortal-events')
+    testImplementation "${portletApiDependency}"
+    testImplementation "${servletApiDependency}"
 
     compileOnly "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
     annotationProcessor "org.hibernate:hibernate-jpamodelgen:${hibernateJpamodelgenVersion}"

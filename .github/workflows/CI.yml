@@ -7,6 +7,14 @@ on:
     branches:
       - master
 jobs:
+  validation:
+    name: Validate Gradle Wrapper
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Gradle Wrapper Validation
+        uses: gradle/wrapper-validation-action@v1
   test-across-jdk:
     name: 'ubuntu-latest with Java ${{ matrix.java-version }}'
     strategy:

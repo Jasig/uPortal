@@ -1,7 +1,7 @@
 description = "Apereo uPortal Content Publishing"
 
 dependencies {
-    compile project(':uPortal-content:uPortal-content-portlet')
-    compile project(':uPortal-io:uPortal-io-jaxb')
-    compile project(':uPortal-utils:uPortal-utils-core')
+    implementation project(':uPortal-content:uPortal-content-portlet')
+    implementation project(':uPortal-io:uPortal-io-jaxb')
+    implementation project(':uPortal-utils:uPortal-utils-core')
 }

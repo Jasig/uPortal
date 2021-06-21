@@ -1,9 +1,9 @@
 description = "Apereo uPortal Concurrency"
 
 dependencies {
-    compile project(':uPortal-core')
+    implementation project(':uPortal-core')
 
-    compile "com.google.guava:guava:${guavaVersion}"
-    compile "org.springframework:spring-web:${springVersion}"
+    implementation "com.google.guava:guava:${guavaVersion}"
+    implementation "org.springframework:spring-web:${springVersion}"
 
 }

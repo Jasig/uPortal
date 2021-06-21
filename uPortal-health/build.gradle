@@ -1,7 +1,7 @@
 description = "Apereo uPortal Health Check"
 
 dependencies {
-    compile project(':uPortal-spring')
+    implementation project(':uPortal-spring')
 
     compileOnly "${servletApiDependency}"
 }

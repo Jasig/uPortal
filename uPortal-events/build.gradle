@@ -5,13 +5,13 @@ ext {
 }
 
 dependencies {
-    compile project(':uPortal-rendering')
-    compile project(':uPortal-security:uPortal-security-core')
+    implementation project(':uPortal-rendering')
+    implementation project(':uPortal-security:uPortal-security-core')
 
-    compile "org.apache.commons:commons-math3:${commonsMath3Version}"
+    implementation "org.apache.commons:commons-math3:${commonsMath3Version}"
     // NOTE:  String that the group and version don't seem to
     // match, but apparently this version is correct.
-    compile "org.apache.httpcomponents:httpclient:${httpclientVersion}"
+    implementation "org.apache.httpcomponents:httpclient:${httpclientVersion}"
 
     compileOnly "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
     annotationProcessor "org.hibernate:hibernate-jpamodelgen:${hibernateJpamodelgenVersion}"

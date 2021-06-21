@@ -5,14 +5,14 @@ ext {
 }
 
 dependencies {
-    compile project(':uPortal-security:uPortal-security-core')
+    implementation project(':uPortal-security:uPortal-security-core')
 
     annotationProcessor "org.hibernate:hibernate-jpamodelgen:${hibernateJpamodelgenVersion}"
     compileOnly "${portletApiDependency}"
     compileOnly "${servletApiDependency}"
 
-    testCompile "${portletApiDependency}"
-    testCompile "${servletApiDependency}"
+    testImplementation "${portletApiDependency}"
+    testImplementation "${servletApiDependency}"
 }
 
 /*

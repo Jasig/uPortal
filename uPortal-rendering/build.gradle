@@ -1,23 +1,23 @@
 description = "Apereo uPortal Rendering"
 
 dependencies {
-    compile project(':uPortal-api:uPortal-api-search')
-    compile project(':uPortal-marketplace')
-    compile project(':uPortal-security:uPortal-security-core')
-    compile project(':uPortal-url')
+    implementation project(':uPortal-api:uPortal-api-search')
+    implementation project(':uPortal-marketplace')
+    implementation project(':uPortal-security:uPortal-security-core')
+    implementation project(':uPortal-url')
 
-    compile "org.apache.httpcomponents:httpcore:${httpcomponentsVersion}"
-    compile "org.apache.commons:commons-pool2:${commonsPoolVersion}"
-    compile("org.apache.portals.pluto:pluto-container:${plutoVersion}") {
+    implementation "org.apache.httpcomponents:httpcore:${httpcomponentsVersion}"
+    implementation "org.apache.commons:commons-pool2:${commonsPoolVersion}"
+    implementation("org.apache.portals.pluto:pluto-container:${plutoVersion}") {
         exclude group: 'javax.xml.bind', module: 'jaxb-api'
         exclude group: 'com.sun.xml.bind', module: 'jaxb-impl'
         exclude group: 'stax', module: 'stax'
     }
-    compile "org.apache.portals.pluto:pluto-portal-driver:${plutoVersion}"
+    implementation "org.apache.portals.pluto:pluto-portal-driver:${plutoVersion}"
 
-    testCompile "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
-    testCompile "${portletApiDependency}"
-    testCompile "${servletApiDependency}"
+    testImplementation "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
+    testImplementation "${portletApiDependency}"
+    testImplementation "${servletApiDependency}"
 
     compileOnly "javax.ccpp:ccpp:${ccppVersion}"
     compileOnly "org.apache.portals.pluto:pluto-container-driver-api:${plutoVersion}"

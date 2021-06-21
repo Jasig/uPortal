@@ -1,7 +1,7 @@
 description = "Apereo uPortal JMX Utils"
 
 dependencies {
-    compile project(':uPortal-security:uPortal-security-services')
+    implementation project(':uPortal-security:uPortal-security-services')
 
     compileOnly "${servletApiDependency}"
 }

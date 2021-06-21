@@ -1,14 +1,14 @@
 description = "Apereo uPortal Search Indexing"
 
 dependencies {
-    compile project(':uPortal-content:uPortal-content-portlet')
+    implementation project(':uPortal-content:uPortal-content-portlet')
 
-    compile "org.apache.lucene:lucene-core:${luceneVersion}"
-    compile "org.jsoup:jsoup:${jsoupVersion}"
+    implementation "org.apache.lucene:lucene-core:${luceneVersion}"
+    implementation "org.jsoup:jsoup:${jsoupVersion}"
 
     compileOnly "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
     compileOnly "${servletApiDependency}"
 
-    testCompile "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
-    testCompile "${servletApiDependency}"
+    testImplementation "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
+    testImplementation "${servletApiDependency}"
 }

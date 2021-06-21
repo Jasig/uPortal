@@ -2,9 +2,4 @@
  * Skip installing and uploading this level of the hierarchy;  it's merely a convenient grouping
  * for submodules.
  */
-install {
-    enabled = false
-}
-uploadArchives {
-    enabled = false
-}
+tasks.withType(PublishToMavenRepository).configureEach { it.enabled = false }

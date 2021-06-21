@@ -1,13 +1,13 @@
 description = "Apereo uPortal Layout Manager Implementations"
 
 dependencies {
-    compile project(':uPortal-content:uPortal-content-portlet')
-    compile project(':uPortal-layout:uPortal-layout-core')
-    compile project(':uPortal-rendering')
-    compile project(':uPortal-security:uPortal-security-core')
-    compile project(':uPortal-spring')
+    implementation project(':uPortal-content:uPortal-content-portlet')
+    implementation project(':uPortal-layout:uPortal-layout-core')
+    implementation project(':uPortal-rendering')
+    implementation project(':uPortal-security:uPortal-security-core')
+    implementation project(':uPortal-spring')
 
-    testCompile "${servletApiDependency}"
+    testImplementation "${servletApiDependency}"
 
     compileOnly "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
     compileOnly "${portletApiDependency}"

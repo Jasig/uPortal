@@ -1,14 +1,14 @@
 description = "Apereo uPortal Soffit Core"
 
 dependencies {
-    compile "io.jsonwebtoken:jjwt-api:${jjwtVersion}"
-    runtime "io.jsonwebtoken:jjwt-impl:${jjwtVersion}",
+    implementation "io.jsonwebtoken:jjwt-api:${jjwtVersion}"
+    runtimeOnly "io.jsonwebtoken:jjwt-impl:${jjwtVersion}",
             "org.bouncycastle:bcprov-jdk15on:${bouncyVersion}",  // for RSASSA-PSS
             "io.jsonwebtoken:jjwt-jackson:${jjwtVersion}"
-    compile "org.apache.commons:commons-lang3:${commonsLang3Version}"
-    compile "org.jasypt:jasypt:${jasyptVersion}"
-    compile "org.slf4j:slf4j-api:${slf4jVersion}"
-    compile "org.springframework:spring-web:${springVersion}"
+    implementation "org.apache.commons:commons-lang3:${commonsLang3Version}"
+    implementation "org.jasypt:jasypt:${jasyptVersion}"
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "org.springframework:spring-web:${springVersion}"
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 }

@@ -1,8 +1,8 @@
 description = "Apereo uPortal Groups LDAP"
 
 dependencies {
-    compile project(':uPortal-groups:uPortal-groups-core')
+    implementation project(':uPortal-groups:uPortal-groups-core')
 
-    compile "org.springframework.ldap:spring-ldap-core:${springLdapVersion}"
-    compile "org.springframework.ldap:spring-ldap-core-tiger:${springLdapVersion}"
+    implementation "org.springframework.ldap:spring-ldap-core:${springLdapVersion}"
+    implementation "org.springframework.ldap:spring-ldap-core-tiger:${springLdapVersion}"
 }

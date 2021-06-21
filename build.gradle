@@ -94,7 +94,7 @@ allprojects {
     /*======== Aggregate Dependencies Report ========*/
     task dependenciesRecursive(type: DependencyReportTask) {
         group = 'Help'
-        description = 'Provides a complete report on project dependencies;  use option (e.g.) --configuration compile to narrow'
+        description = 'Provides a complete report on project dependencies;  use option (e.g.) --configuration implementation to narrow'
     }
 
 }
@@ -104,7 +104,6 @@ subprojects {
 
     /*======== Plugins ========*/
     apply plugin: 'maven-publish'
-    apply plugin: 'maven'
     apply plugin: 'signing'
 
     /*======== Dependency Management ========**/
@@ -115,12 +114,12 @@ subprojects {
     }
 
     dependencies {
-        testCompile "junit:junit:${junitVersion}"
-        testCompile "org.easymock:easymock:${easymockVersion}"
-        testCompile "org.hamcrest:hamcrest-all:${hamcrestVersion}"
-        testCompile "org.mockito:mockito-core:${mockitoVersion}"
-        testCompile "org.springframework:spring-test:${springVersion}"
-        testCompile "org.xmlunit:xmlunit-legacy:${xmlunitVersion}"
+        testImplementation "junit:junit:${junitVersion}"
+        testImplementation "org.easymock:easymock:${easymockVersion}"
+        testImplementation "org.hamcrest:hamcrest-all:${hamcrestVersion}"
+        testImplementation "org.mockito:mockito-core:${mockitoVersion}"
+        testImplementation "org.springframework:spring-test:${springVersion}"
+        testImplementation "org.xmlunit:xmlunit-legacy:${xmlunitVersion}"
         spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.11.0'
     }
 
@@ -135,7 +134,7 @@ subprojects {
         publishingRepositoryUrlSnapshot = project.hasProperty('ossrhUrlSnapshot') ? project.getProperty('ossrhUrlSnapshot') : "https://oss.sonatype.org/content/repositories/snapshots/"
     }
     signing {
-        required { gradle.taskGraph.hasTask('uploadArchives') }
+        required { gradle.taskGraph.hasTask('publish') }
         sign configurations.archives
     }
     tasks.withType(Javadoc) {
@@ -163,52 +162,42 @@ subprojects {
         publications {
             maven(MavenPublication) {
                 from components.java
-            }
-        }
-    }
-    uploadArchives {
-        repositories {
-            mavenDeployer {
-                beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
-                repository(url: publishingRepositoryUrl) {
-                    authentication(userName: publishingUsername, password: publishingPassword)
-                }
-
-                snapshotRepository(url: publishingRepositoryUrlSnapshot) {
-                    authentication(userName: publishingUsername, password: publishingPassword)
-                }
-
-                pom.project {
-                    name 'uPortal'
-                    packaging 'jar'
-                    // optionally artifactId can be defined here
-                    description 'Enterprise open source portal built by and for the higher education community.'
-                    url 'https://github.com/Jasig/uPortal'
+                pom {
+                    name = 'uPortal'
+                    description = 'Enterprise open source portal built by and for the higher education community.'
+                    url = 'https://github.com/Jasig/uPortal'
 
                     scm {
-                        connection 'scm:git@github.com:Jasig/uPortal.git'
-                        url 'https://github.com/Jasig/uPortal'
+                        connection = 'scm:git@github.com:Jasig/uPortal.git'
+                        url = 'https://github.com/Jasig/uPortal'
                     }
 
                     licenses {
                         license {
-                            name 'The Apache License, Version 2.0'
-                            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                            name = 'The Apache License, Version 2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
                         }
                     }
 
                     developers {
                         developer {
-                            organization 'uPortal Developers'
-                            organizationUrl 'https://github.com/Jasig/uPortal/graphs/contributors'
+                            organization = 'uPortal Developers'
+                            organizationUrl = 'https://github.com/Jasig/uPortal/graphs/contributors'
                         }
                     }
                 }
             }
         }
+
+        repositories {
+            maven {
+                def releasesRepoUrl = layout.buildDirectory.dir('repos/releases')
+                def snapshotsRepoUrl = layout.buildDirectory.dir('repos/snapshots')
+                url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            }
+        }
     }
-    afterReleaseBuild.dependsOn uploadArchives
 
     def jacocoExecutionDataFiles = fileTree(buildDir).include("/jacoco/*.exec")
     jacocoTestReport {

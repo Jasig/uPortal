@@ -1,7 +1,7 @@
 description = "Apereo uPortal Groups Filesystem"
 
 dependencies {
-    compile project(':uPortal-groups:uPortal-groups-core')
+    implementation project(':uPortal-groups:uPortal-groups-core')
 
-    // compile "commons-io:commons-io:${commonsIoVersion}"
+    // implementation "commons-io:commons-io:${commonsIoVersion}"
 }

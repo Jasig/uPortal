@@ -1,16 +1,16 @@
 description = "Apereo uPortal Soffit Renderer"
 
 dependencies {
-    compile(project(':uPortal-soffit:uPortal-soffit-core')) {
+    implementation(project(':uPortal-soffit:uPortal-soffit-core')) {
         exclude group: 'org.springframework', module: 'spring-web'
     }
 
-    compile "org.springframework:spring-webmvc:${springVersion}"
-    compile "org.springframework.security:spring-security-web:${springSecurityVersion}"
+    implementation "org.springframework:spring-webmvc:${springVersion}"
+    implementation "org.springframework.security:spring-security-web:${springSecurityVersion}"
 
-    testCompile "junit:junit:${junitVersion}"
-    testCompile "org.mockito:mockito-core:${mockitoVersion}"
-    testCompile "${servletApiDependency}"
+    testImplementation "junit:junit:${junitVersion}"
+    testImplementation "org.mockito:mockito-core:${mockitoVersion}"
+    testImplementation "${servletApiDependency}"
 
     compileOnly "${servletApiDependency}"
 }

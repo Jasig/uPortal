@@ -1,27 +1,27 @@
 description = "Apereo uPortal Framework Portlets"
 
 dependencies {
-    compile project(':uPortal-io:uPortal-io-types')
-    compile project(':uPortal-tenants')
-    compile project(':uPortal-web')
+    implementation project(':uPortal-io:uPortal-io-types')
+    implementation project(':uPortal-tenants')
+    implementation project(':uPortal-web')
 
-    compile "com.amazonaws:aws-java-sdk-s3:${awsVersion}"
-    compile "javax.mail:mail:${javaxMailVersion}"
-    compile("net.sf.json-lib:json-lib-ext-spring:${jsonLibExtSpringVersion}") {
+    implementation "com.amazonaws:aws-java-sdk-s3:${awsVersion}"
+    implementation "javax.mail:mail:${javaxMailVersion}"
+    implementation("net.sf.json-lib:json-lib-ext-spring:${jsonLibExtSpringVersion}") {
         exclude group: 'javax.servlet', module: 'servlet-api'
     }
-    compile "org.antlr:ST4:${stringtemplateVersion}"
-    compile("org.lesscss:lesscss:${lesscssVersion}") {
+    implementation "org.antlr:ST4:${stringtemplateVersion}"
+    implementation("org.lesscss:lesscss:${lesscssVersion}") {
         exclude group: 'org.slf4j', module: 'slf4j-simple'
     }
-    compile "org.springframework:spring-context-support:${springVersion}"
+    implementation "org.springframework:spring-context-support:${springVersion}"
 
     // needed for stats portlet
-    compile "com.fasterxml.jackson.datatype:jackson-datatype-joda:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-joda:${jacksonVersion}"
 
-    testCompile "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
-    testCompile "${portletApiDependency}"
-    testCompile "${servletApiDependency}"
+    testImplementation "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
+    testImplementation "${portletApiDependency}"
+    testImplementation "${servletApiDependency}"
 
     compileOnly "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
     compileOnly "org.apache.portals.pluto:pluto-container-driver-api:${plutoVersion}"

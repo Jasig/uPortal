@@ -1,9 +1,9 @@
 description = "Apereo uPortal URL"
 
 dependencies {
-    compile project(':uPortal-content:uPortal-content-portlet')
-    compile project(':uPortal-groups:uPortal-groups-core')
-    compile project(':uPortal-security:uPortal-security-core')
+    implementation project(':uPortal-content:uPortal-content-portlet')
+    implementation project(':uPortal-groups:uPortal-groups-core')
+    implementation project(':uPortal-security:uPortal-security-core')
 
     compileOnly "org.apache.portals.pluto:pluto-container-api:${plutoVersion}"
     compileOnly "${portletApiDependency}"
