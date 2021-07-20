@@ -106,3 +106,47 @@ Example response:
   }
 }
 ```
+### Portlet Preferences
+
+`/api/prefs/{task}`
+
+(example: `http://localhost:8080/uPortal/api/prefs/getprefs/weather` )
+
+These endpoints provide a way for soffits and web-components to access and store custom preferences for
+individual soffits and web-components. There are several different endpoints for the various ways to store
+and retrieve these preferences. This is an overview of the general uses. See the Swagger UI documentation 
+for specifics of each endpoint. 
+
+NOTE: to use any of these endpoints the soffit/web-component must know its own fname as registered in uPortal. 
+This is essential to the functionality of the endpoints
+
+#### Regular preferences vs default preferences
+
+To access the regular (entity) preferences of an individual soffit or web-component use the endpoints with 
+only prefs in the name. These will return or store the preferences associated with the specific user for the 
+specific soffit/web-component. This will return/store the same information as the internal call to the preferences 
+for portlets per entity.
+
+NOTE: In order to protect unwanted meddling of portlet/soffit/web-component behavior, any preferences that you do not 
+want changed must be declared as readonly when set at registration. Otherwise users can potentially override these 
+settings for themselves. 
+
+To access the default (definition) preferences of an individual soffit or web-component use the endpoints with 
+definitionprefs in the name. These will return or store the preferences associated with the definition of the
+specific soffit/web-component set when registered with uPortal. This will return/store the same information as 
+the internal call to the preferences for portlets.
+ 
+NOTE: These calls will be rejected if attempted by any user without administrative privileges. This prevents 
+unauthorized meddling of default preferences since these calls can allow one to overwrite readonly preferences.
+
+#### Only calls
+
+There are two calls with only in their names. These are used to single out the preferences that are only associated 
+with the called level without any extra. These are included because the normal retrieve calls return every preference 
+up to the desired level, with any conflicting information overwritten by the higher level (just as the portlet calls do). 
+If you wish to receive the preferences only associated with a specific level use these calls. 
+
+NOTE: This may not return the preferences you expect. For example, any soffit calling the definitononly call will receive
+the `org.apereo.portal.soffit.connector.SoffitConnectorController.serviceUrl` value and any soffit data model preferences 
+as well as other definition preferences. 
+Also be aware, if the user has no preferences set and you call entityonly you will receive an empty response body.  

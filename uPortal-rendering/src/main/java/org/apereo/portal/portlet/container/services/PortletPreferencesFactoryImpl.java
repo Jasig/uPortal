@@ -37,7 +37,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionOperations;
 
 /** Creates {@link PortletPreferences} objects */
-@Service
+@Service("portletPreferencesFactory")
 public class PortletPreferencesFactoryImpl implements PortletPreferencesFactory {
     private IPersonManager personManager;
     private IPortletWindowRegistry portletWindowRegistry;
@@ -110,6 +110,38 @@ public class PortletPreferencesFactoryImpl implements PortletPreferencesFactory 
                     transactionOperations,
                     portletEntityId,
                     render);
+        }
+    }
+
+    /** method that creates REST API specific PortletPreferences */
+    @Override
+    public PortletPreferences createAPIPortletPreferences(
+            final HttpServletRequest requestContext,
+            IPortletEntity portletEntity,
+            boolean render,
+            boolean configMode) {
+        final HttpServletRequest containerRequest = requestContext;
+
+        if (configMode) {
+            final IPortletDefinitionId portletDefinitionId = portletEntity.getPortletDefinitionId();
+            return new PortletDefinitionPreferencesImpl(
+                    portletDefinitionRegistry, transactionOperations, portletDefinitionId, render);
+        } else if (this.isStoreInMemory(containerRequest)) {
+            final IPortletEntityId portletEntityId = portletEntity.getPortletEntityId();
+            return new GuestPortletEntityPreferencesAPIImpl(
+                    requestContext,
+                    portletEntityRegistry,
+                    portletDefinitionRegistry,
+                    portletEntityId,
+                    render);
+        } else {
+            final IPortletEntityId portletEntityId = portletEntity.getPortletEntityId();
+            return new PortletEntityPreferencesAPIImpl(
+                    requestContext,
+                    portletEntityRegistry,
+                    portletDefinitionRegistry,
+                    transactionOperations,
+                    portletEntityId);
         }
     }
 
