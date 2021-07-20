@@ -2,7 +2,7 @@ description = "Apereo uPortal Usefull Dialects for hibernate 4"
 
 
 dependencies {
-    compileOnly 'org.hibernate:hibernate-core:4.2.+'
+    compileOnly 'org.hibernate:hibernate-core:4.3.11.Final'
     compileOnly "org.slf4j:jcl-over-slf4j:${slf4jVersion}"
 }
 
